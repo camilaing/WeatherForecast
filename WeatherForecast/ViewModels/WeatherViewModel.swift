@@ -21,9 +21,7 @@ class WeatherViewModel: ObservableObject {
     @ObservedObject var locationManager = LocationManager.shared
     
     init() {
-        guard let coordinates = locationManager.location else { return }
-        city = "Current Location"
-        getWeather(coordinate: coordinates)
+        getCurrentLocation()
     }
     
     private lazy var dateFormatter: DateFormatter = {
@@ -91,6 +89,12 @@ class WeatherViewModel: ObservableObject {
     
     func getDay(timestamp: Int) -> String {
         return dayFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(timestamp)))
+    }
+    
+    func getCurrentLocation() {
+        guard let coordinates = locationManager.location else { return }
+        city = "Current Location"
+        getWeather(coordinate: coordinates)
     }
     
     func getLocation() {

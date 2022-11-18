@@ -20,6 +20,7 @@ struct WeatherHeaderView: View {
             
             Button {
                 weatherViewModel.city = search
+                search = " "
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)

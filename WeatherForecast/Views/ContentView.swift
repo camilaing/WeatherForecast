@@ -14,6 +14,23 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack {
+                HStack {
+                    Spacer()
+                    
+                    Button() {
+                        weatherViewModel.getCurrentLocation()
+                    } label: {
+                        HStack {
+                            Text("Current Location")
+                                .foregroundColor(.white)
+                            Image(systemName: "location.fill")
+                                .foregroundColor(.white)
+                                .background(Color.clear)
+                        }
+                    }
+                    .padding(.trailing, 30)
+                    .padding(.top, 30)
+                }
                 WeatherHeaderView(weatherViewModel: weatherViewModel)
                     .padding(.top, 50)
                 ScrollView(showsIndicators: false) {

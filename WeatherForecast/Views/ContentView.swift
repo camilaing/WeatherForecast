@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @ObservedObject var weatherViewModel = WeatherViewModel()
+    @ObservedObject var locationManager: LocationManager
     
     var body: some View {
         ZStack {
@@ -18,7 +19,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Button() {
-                        weatherViewModel.getCurrentLocation()
+                        locationManager.location != nil ? weatherViewModel.getCurrentLocation() : locationManager.openSettings()
                     } label: {
                         HStack {
                             Text("Current Location")
@@ -60,8 +61,3 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

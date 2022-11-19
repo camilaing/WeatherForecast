@@ -17,13 +17,9 @@ struct BlurredBackgroundView: View {
     }
     
     var gradient: some View {
-        LinearGradient(gradient: Gradient(colors: [Color(red: 0.4627, green: 0.8392, blue: 1.0).opacity(0.3), Color.blue, Color(red: 0.4627, green: 0.8392, blue: 1.0).opacity(0.3)]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [Color(red: 0.4627, green: 0.8392, blue: 1.0).opacity(0.7), Color.blue, Color(red: 0.4627, green: 0.8392, blue: 1.0).opacity(0.7)]), startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.vertical)
     }
 }
 
-struct BlurredBackgroundView_Previews: PreviewProvider {
-    static var previews: some View {
-        BlurredBackgroundView()
-    }
-}
+

@@ -44,8 +44,3 @@ struct WeatherHeaderView: View {
     }
 }
 
-struct WeatherHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

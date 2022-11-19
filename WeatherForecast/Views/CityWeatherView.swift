@@ -26,8 +26,3 @@ struct CityWeatherView: View {
     }
 }
 
-struct CityWeatherView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

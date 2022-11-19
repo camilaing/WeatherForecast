@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import SwiftUI
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
@@ -36,6 +37,15 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             manager.requestWhenInUseAuthorization()
         } else {
             manager.requestLocation()
+        }
+    }
+    
+    func openSettings() {
+        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else { return }
+        
+        if UIApplication.shared.canOpenURL(settingsURL) {
+            UIApplication.shared.open(settingsURL, completionHandler: { (success) in
+            })
         }
     }
 }

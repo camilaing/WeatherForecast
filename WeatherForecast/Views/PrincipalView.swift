@@ -23,8 +23,3 @@ struct PrincipalView: View {
     }
 }
 
-struct PrincipalView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

@@ -33,7 +33,6 @@ struct ContentView: View {
                     .padding(.top, 30)
                 }
                 WeatherHeaderView(weatherViewModel: weatherViewModel)
-                    .padding(.top, 50)
                 ScrollView(showsIndicators: false) {
                     PrincipalView(weatherViewModel: weatherViewModel)
                 }
